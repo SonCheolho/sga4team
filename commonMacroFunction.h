@@ -1,7 +1,7 @@
 #pragma once
-//============================================================================
-//		## commonMacroFunction ## (필요한 분분은 직접 만들어서 추가할것!)
-//============================================================================
+//====================================================================
+//			## commonMacroFunction ## (필요한 부분은 직접 추가해라!!!)
+//====================================================================
 
 //POINT
 inline POINT PointMake(int x, int y)
@@ -10,25 +10,42 @@ inline POINT PointMake(int x, int y)
 	return pt;
 }
 
-//선 그리기
+//선그리기
 inline void LineMake(HDC hdc, int x1, int y1, int x2, int y2)
 {
 	MoveToEx(hdc, x1, y1, NULL);
 	LineTo(hdc, x2, y2);
 }
 
-//RECT 만들기
+//RECT 만들기(left, top, right, bottom)
 inline RECT RectMake(int x, int y, int width, int height)
 {
 	RECT rc = { x, y, x + width, y + height };
 	return rc;
 }
 
-//RECT 센터점에 만들기 - 높이와 폭이 홀수일경우 문제가 발생한다.
+//RECT 센터점에 오도록 렉트만들기
 inline RECT RectMakeCenter(int x, int y, int width, int height)
 {
 	RECT rc = { x - width / 2, y - height / 2, x + width / 2, y + height / 2 };
 	return rc;
+}
+
+//타원 그리기 (일립스함수 사용)
+inline void EllipseMake(HDC hdc, int x, int y, int width, int height)
+{
+	Ellipse(hdc, x, y, x + width, y + height);
+}
+//타원 그리기 (일립스함수 사용)
+inline void EllipseMake(HDC hdc, RECT rc)
+{
+	Ellipse(hdc, rc.left, rc.top, rc.right, rc.bottom);
+}
+
+//타원 그리기 (일립스함수 사용)
+inline void EllipseMakeCenter(HDC hdc, int x, int y, int width, int height)
+{
+	Ellipse(hdc, x - width / 2, y - height / 2, x + width / 2, y + height / 2);
 }
 
 //사각형 그리기 (렉탱글함수 사용)
@@ -36,18 +53,15 @@ inline void RectangleMake(HDC hdc, int x, int y, int width, int height)
 {
 	Rectangle(hdc, x, y, x + width, y + height);
 }
-
-//원 그리기 (일립스함수 사용)
-inline void EllipseMake(HDC hdc, int x, int y, int width, int height)
+//사각형 그리기 (렉탱글함수 사용)
+inline void RectangleMake(HDC hdc, RECT rc)
 {
-	Ellipse(hdc, x, y, x + width, y + height);
+	Rectangle(hdc, rc.left, rc.top, rc.right, rc.bottom);
 }
 
-//원 센터점 중심으로 그리기 (일립스함수 사용) - 높이와 폭이 홀수일경우 문제가 발생한다.
-inline void EllipseMakeCenter(HDC hdc, int x, int y, int width, int height)
+//사각형 센터점에 그리기 (렉탱글함수 사용)
+inline void RectangleMakeCenter(HDC hdc, int x, int y, int width, int height)
 {
-	Ellipse(hdc, x - width / 2, y - height / 2, x + width / 2, y + height / 2);
+	Rectangle(hdc, x - width / 2, y - height / 2, x + width / 2, y + height / 2);
 }
-
-
 

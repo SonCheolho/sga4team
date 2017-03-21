@@ -1,91 +1,86 @@
-//============================================================================
-//		## 헤더파일 써준다 ##
-//============================================================================
+//====================================================================
+//			## 헤더파일 써준다 ##
+//====================================================================
 #include "stdafx.h"
 #include "mainGame.h"
-
-//============================================================================
-//		## 전역변수 써준다 ##
-//============================================================================
+//====================================================================
+//			## 전역변수 써준다 ##
+//====================================================================
 HINSTANCE _hInstance;
 HWND _hWnd;
 POINT _ptMouse = { 0, 0 };
 
-//메인게임 클래스 선언;
-mainGame _mg;
+//메인게임 클래스 정적할당
+mainGame mg;
 
-//============================================================================
-//		## 함수 전방선언 ##
-//============================================================================
+//====================================================================
+//			## 함수 전방선언 ##
+//====================================================================
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 void setWindowSize(int x, int y, int width, int height);
 
-//============================================================================
-//		## 윈도우 메인함수 ##
-//============================================================================
+//====================================================================
+//			## 윈도우 메인함수 ##
+//====================================================================
 int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdParam, int nCmdShow)
 {
-	//hInstance : 프로그램의 인스턴스 핸들
-	//hPrevInstance : 이전에 실행된 인스턴스 핸들 (지금은 사용안함)
-	//lpszCmdParam : 명령행으로 입력된 프로그램 인수
-	//nCmdShow : 프로그램이 시작될 형태 (최소화, 보통크기등등..)
+	//윈메인의 역할
+	//1. 윈도우 창 세팅후 화면에 띄우기
+	//2. 메세지 루프
 
 	//인스턴스를 전역변수에 담아둔다
 	_hInstance = hInstance;
 
-	//WNDCLASS : 윈도우의 정보를 저장하기 위한 구조체
+	//WNDCLASS : 윈도우창의 정보를 저장하기 위한 구조체
+	//윈도우클래스 구조체 선언후 초기화
 	WNDCLASS wndClass;
-
-	wndClass.cbClsExtra = 0;										//클래스 여분 메모리
-	wndClass.cbWndExtra = 0;										//윈도우 여분 메모리
-	wndClass.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);	//백그라운드
-	wndClass.hCursor = LoadCursor(NULL, IDC_ARROW);					//커서
-	wndClass.hIcon = LoadIcon(NULL, IDI_APPLICATION);				//아이콘
-	wndClass.hInstance = hInstance;									//인스턴스
-	wndClass.lpfnWndProc = (WNDPROC)WndProc;						//윈도우 프로시져
-	wndClass.lpszClassName = WINNAME;								//클래스이름
-	wndClass.lpszMenuName = NULL;									//메뉴이름
-	wndClass.style = CS_HREDRAW | CS_VREDRAW;						//윈도우 스타일
+	wndClass.cbClsExtra = 0;
+	wndClass.cbWndExtra = 0;
+	wndClass.hbrBackground = (HBRUSH)GetStockObject(LTGRAY_BRUSH);
+	wndClass.hCursor = LoadCursor(NULL, IDC_ARROW);
+	wndClass.hIcon = LoadIcon(NULL, IDI_APPLICATION);
+	wndClass.hInstance = hInstance;
+	wndClass.lpfnWndProc = (WNDPROC)WndProc;
+	wndClass.lpszClassName = WINNAME;
+	wndClass.lpszMenuName = NULL;
+	wndClass.style = CS_HREDRAW | CS_VREDRAW;
 
 	//윈도우 클래스 등록
 	RegisterClass(&wndClass);
 
-	//윈도우 생성
+	//윈도우 창 생성
 	_hWnd = CreateWindow(
 		WINNAME,				//윈도우 클래스의 이름
 		WINNAME,				//윈도우 타이틀바 이름
-		WINSTYLE,				//윈도우 스타일
-		WINSTARTX,				//윈도우 화면좌표 x
-		WINSTARTY,				//윈도우 화면좌표 y
-		WINSIZEX,				//윈도우 화면좌표 width
-		WINSIZEY,				//윈도우 화면좌표 height
+		WS_OVERLAPPEDWINDOW,	//윈도우 스타일
+		WINSTARTX,				//윈도우 화면 x좌표
+		WINSTARTY,				//윈도우 화면 y좌표
+		WINSIZEX,				//윈도우 화면 가로크기
+		WINSIZEY,				//윈도우 화면 세로크기
 		NULL,					//부모 윈도우
 		(HMENU)NULL,			//메뉴핸들
-		hInstance,				//인스턴스 지정
-		NULL);					//윈도우 및 자식 윈도우를 생성하면 지정해주되 그렇지 않으면 NULL
+		hInstance,				//인스턴스
+		NULL					//윈도우 및 자식 윈도우를 생성하면 지정하고 그렇지 않으면 NULL(우린 걍 NULL사용하면 됨)
+	);
 
-	//화면 작업 사이즈 영역 계산
+	//윈도우 클라이언트영역 정확히 세팅하기 
 	setWindowSize(WINSTARTX, WINSTARTY, WINSIZEX, WINSIZEY);
 
-	//화면에 윈도우 보여준다
+	//화면에 윈도우 보여주기
 	ShowWindow(_hWnd, nCmdShow);
 
-	//메인게임 클래스의 초기화를 실패했다면 바로 종료시켜라
-	if (FAILED(_mg.init()))
+	//메인게임 클래스 초기화
+	if (FAILED(mg.init()))
 	{
 		return 0;
 	}
 
-	//MSG : 운영체제에서 발행하는 메시지 정보를 저장하기 위한 구조체
+	//MSG : 운영체제에서 발생하는 메세지 정보를 저장하기 위한 구조체
 	MSG message;
+	//GetMessage : 메세지를 꺼내올 수 있을때까지 멈춰있는 함수
+	//PeekMessage : 메세지가 없더라도 리턴되는 함수
 
-	//메시지 루프~~
-	//GetMessage : GetMessage는 메시지를 꺼내올 수 있을때까지 멈춰있는 함수이고,
-	//PeekMessage : PeekMessage는 메시지가 없더라도 리턴되는 함수로서, 계속 루프되는 함수이다. 
-
-	/*
-	//게임용 메세지 루프 나중에 봉인해제할 때까지 그대로 놔둘것!!!
-	while (true)
+	while (true) //게임용
 	{
 		if (PeekMessage(&message, NULL, 0, 0, PM_REMOVE))
 		{
@@ -95,52 +90,52 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmd
 		}
 		else
 		{
-			_mg.update();
-			_mg.render();
+			TIMEMANAGER->update(60.0f);
+			mg.update();
+			mg.render();
 		}
 	}
-	*/
 
-	//TranslateMessage : 키보드 입력메시지 처리를 담당한다.
-	//입력된 키가 문자키인지 확인후 대문자 혹은 소문자, 한글, 영문, 인지에 대한 WM_CHAR메시지를 발생시킨다.
-
-	//DispatchMessage : 윈도우 프로시져에서 전달된 메시지를 실제 윈도우로 전달해준다
-
-	//일반 프로그램용 메세지 루프임~
-	//메시지 큐에 메시지가 있으면 메시지 처리...
+	/*
+	//메세지루프
 	while (GetMessage(&message, 0, 0, 0))
 	{
+		//TranslateMessage : 키보드 입력메시지 처리를 담당
+		//입력된 키가 문자키인지 확인후 대문자, 소문자, 한글, 영문
+		//WM_CHAR메세지를 발생시킨다
+		//DispatchMessage : 윈도우 프로시져에서 전달된 메세지를
+		//실제 윈도우로 전달해준다
 		TranslateMessage(&message);
 		DispatchMessage(&message);
 	}
+	*/
 
 	//메인게임 클래스 해제
-	_mg.release();
+	mg.release();
 
-	//윈도우 클래스 등록 해제
+	//윈도우 클래스 등록해제
 	UnregisterClass(WINNAME, hInstance);
 
-	return message.wParam;
+	return (int)message.wParam;
 }
 
+//====================================================================
+//			## 윈도우 프로시져 ##
+//====================================================================
 LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 {
-	return _mg.MainProc(hWnd, iMessage, wParam, lParam);
+	return mg.MainProc(hWnd, iMessage, wParam, lParam);
 }
 
-//============================================================================
-//		## 윈도우 크기 조정 ## (클라이언트 영역의 사이즈를 정확히 잡아준다)
-//============================================================================
+//====================================================================
+//			## 윈도우 크기 조정 ## (클라이언트 영역의 사이즈를 정확히 잡아준다)
+//====================================================================
 void setWindowSize(int x, int y, int width, int height)
 {
-	RECT rc;
-	rc.left = 0;
-	rc.top = 0;
-	rc.right = width;
-	rc.bottom = height;
-
+	RECT rc = { 0, 0, width, height };
 	//실제 윈도우 크기 조정
 	AdjustWindowRect(&rc, WINSTYLE, false);
 	//위 렉트 정보로 윈도우 클라이언트 사이즈 세팅
-	SetWindowPos(_hWnd, NULL, x, y, (rc.right - rc.left), (rc.bottom - rc.top), SWP_NOZORDER | SWP_NOMOVE);
+	SetWindowPos(_hWnd, NULL, x, y, (rc.right - rc.left), (rc.bottom - rc.top),
+		SWP_NOZORDER | SWP_NOMOVE);
 }

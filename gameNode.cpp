@@ -1,103 +1,103 @@
 #include "stdafx.h"
 #include "gameNode.h"
-gameNode::gameNode()
-{
-}
-gameNode::~gameNode()
-{
-}
-//==================================================================
-//		## 더이상 생성자, 소멸자는 사용하지 않는다 ##
-//==================================================================
 
-//==================================================================
-//		## 초기화 ## init(void)
-//==================================================================
+//====================================================================
+//			## 초기화 ##
+//====================================================================
 HRESULT gameNode::init(void)
 {
-	_hdc = GetDC(_hWnd);
-	_managerInit = false;
-
 	return S_OK;
 }
-
-//==================================================================
-//		## 초기화 - init(bool managerInit) ## 
-//==================================================================
 HRESULT gameNode::init(bool managerInit)
 {
 	_hdc = GetDC(_hWnd);
 	_managerInit = managerInit;
-
+	
 	if (managerInit)
 	{
-		SetTimer(_hWnd, 1, 10, NULL);		//타이머 셋팅
-		KEYMANAGER->init();					//키매니져 셋팅
-		IMAGEMANAGER->init();				//이미지매니져 셋팅
+		SetTimer(_hWnd, 1, 10, NULL);		//타이머 초기화
+		KEYMANAGER->init();					//키매니져 초기화
+		RND->init();						//랜덤펑션 초기화
+		IMAGEMANAGER->init();				//이미지매니져 초기화
+		TXTDATA->init();					//텍스트데이터 초기화
+		INIDATA->init();					//INI데이터 초기화
+		SCENEMANAGER->init();				//씬매니져 초기화
+		TIMEMANAGER->init();				//타임매니져 초기화
 	}
 
 	return S_OK;
 }
-
-//==================================================================
-//		## 해제 ## release(void)
-//==================================================================
+//====================================================================
+//			## 해제 ##
+//====================================================================
 void gameNode::release(void)
 {
 	if (_managerInit)
 	{
 		//타이머 해제
 		KillTimer(_hWnd, 1);
-		//키매니져 해제
+		//키매니져 해제, 싱글톤 해제
+		KEYMANAGER->release();
 		KEYMANAGER->releaseSingleton();
+		//랜덤펑션 해제, 싱글톤 해제
+		RND->release();
+		RND->releaseSingleton();
 		//이미지매니져 해제, 싱글톤 해제
 		IMAGEMANAGER->release();
 		IMAGEMANAGER->releaseSingleton();
+		//텍스트데이터 싱글톤 해제
+		TXTDATA->releaseSingleton();
+		//INI데이터 싱글톤 해제
+		INIDATA->releaseSingleton();
+		//씬매니져 해제, 싱글톤 해제
+		SCENEMANAGER->release();
+		SCENEMANAGER->releaseSingleton();
+		//타임매니져 싱글톤 해제
+		TIMEMANAGER->releaseSingleton();
 	}
 
 	//DC 해제
 	ReleaseDC(_hWnd, _hdc);
 }
 
-//==================================================================
-//		## 업데이트 ## update(void)
-//==================================================================
+//====================================================================
+//			## 업데이트 ##
+//====================================================================
 void gameNode::update(void)
 {
-	//새로고침(나중에 고성능 타이머를 만든후 삭제한다)
 	InvalidateRect(_hWnd, NULL, FALSE);
 }
 
-//==================================================================
-//		## 렌더 ## render(HDC hdc)
-//==================================================================
+//====================================================================
+//			## 렌더 ##
+//====================================================================
 void gameNode::render(void)
 {
 }
 
-//==================================================================
-//		## 메인 프로시져 ## 
-//==================================================================
 LRESULT gameNode::MainProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 {
-	PAINTSTRUCT ps;
 	HDC hdc;
+	PAINTSTRUCT ps;
 
 	switch (iMessage)
 	{
-	case WM_TIMER:
+	case WM_TIMER:			//타이머 업데이트
 		this->update();
 		break;
-	case WM_PAINT:
+	case WM_PAINT:			//출력에 관한 모든것을 담당하는 메세지(문자, 그림, 도형등등등)
 		hdc = BeginPaint(hWnd, &ps);
+		//글자 배경 투명화 시키기
+		SetBkMode(hdc, TRANSPARENT);
 		this->render();
 		EndPaint(hWnd, &ps);
 		break;
-	case WM_MOUSEMOVE:
-		_ptMouse.x = static_cast<float>LOWORD(lParam);
-		_ptMouse.y = static_cast<float>HIWORD(lParam);
+	case WM_MOUSEMOVE:		//마우스가 움직일때마다 발생되는 메세지
+		//_ptMouse.x = static_cast<float>(LOWORD(lParam));
+		_ptMouse.x = LOWORD(lParam);
+		_ptMouse.y = HIWORD(lParam);
 		break;
-	case WM_KEYDOWN:
+	case WM_KEYDOWN:		//키보드 및 마우스버튼이 눌렸을때 발생되는 메세지
 		switch (wParam)
 		{
 		case VK_ESCAPE:
@@ -105,9 +105,9 @@ LRESULT gameNode::MainProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lPara
 			break;
 		}
 		break;
-	case WM_DESTROY:
+	case WM_DESTROY:		//소멸자
 		PostQuitMessage(0);
-		break;
+		return 0;
 	}
 
 	return (DefWindowProc(hWnd, iMessage, wParam, lParam));

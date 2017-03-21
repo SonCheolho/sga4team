@@ -9,118 +9,231 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="리소스 파일">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="GameFramework2D">
+      <UniqueIdentifier>{227e3f51-d174-49cf-b872-7e5714900a82}</UniqueIdentifier>
     </Filter>
-    <Filter Include="2D GAMEFRAMEWORK">
-      <UniqueIdentifier>{272b49be-9ad0-4509-a526-e337b1dd414c}</UniqueIdentifier>
+    <Filter Include="MainGame">
+      <UniqueIdentifier>{9b59186b-48d0-40bf-9075-a9193d198d0d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="2D GAMEFRAMEWORK\메니져">
-      <UniqueIdentifier>{c2120d7e-a23e-4683-b889-e3eeb187f89b}</UniqueIdentifier>
+    <Filter Include="GameFramework2D\매니져">
+      <UniqueIdentifier>{6a1bdc86-1fed-4517-9120-670098abdf8d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="메인게임">
-      <UniqueIdentifier>{942ee208-862b-4f70-9849-ef51b3faf005}</UniqueIdentifier>
+    <Filter Include="GameFramework2D\유틸">
+      <UniqueIdentifier>{a5641d1f-2eca-4934-9897-ccceb8440883}</UniqueIdentifier>
     </Filter>
-    <Filter Include="2D GAMEFRAMEWORK\이미지">
-      <UniqueIdentifier>{374b554f-1a98-4d64-abb9-e2ce08555763}</UniqueIdentifier>
+    <Filter Include="WinMain">
+      <UniqueIdentifier>{56c9cd3c-4ee4-481b-90d0-85d034f56164}</UniqueIdentifier>
     </Filter>
-    <Filter Include="2D GAMEFRAMEWORK\유틸">
-      <UniqueIdentifier>{8bc523dd-195e-4f2a-a24c-4f6b6d018fa3}</UniqueIdentifier>
+    <Filter Include="GameFramework2D\이미지">
+      <UniqueIdentifier>{2b9fe41f-9308-4a9e-8c86-e3864ee8a074}</UniqueIdentifier>
     </Filter>
-    <Filter Include="2D GAMEFRAMEWORK\총알">
-      <UniqueIdentifier>{8f5f638c-98f1-4283-bab3-2dbe6d2a5d85}</UniqueIdentifier>
+    <Filter Include="MainGame\슈팅게임">
+      <UniqueIdentifier>{715c8677-8fab-4892-96ae-7944267dc14b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="메인게임\메가맨">
-      <UniqueIdentifier>{0a0d3c4a-d112-4546-857a-9db70410e182}</UniqueIdentifier>
+    <Filter Include="GameFramework2D\총알">
+      <UniqueIdentifier>{1aa89080-95df-4251-b056-f6a1479a975b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="메인게임\포트리스">
-      <UniqueIdentifier>{1d1396a7-4a5e-4bee-9d08-bfd92ba1dde5}</UniqueIdentifier>
+    <Filter Include="GameFramework2D\체력바">
+      <UniqueIdentifier>{e8368a6b-c243-4396-85e4-4b7d008948ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework2D\TXT데이터">
+      <UniqueIdentifier>{8fd309c5-79de-4512-87bb-7bc46be13346}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework2D\INI데이터">
+      <UniqueIdentifier>{20e0f5df-b094-4dd6-a7bb-5d2fc21de3a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame\ini테스트">
+      <UniqueIdentifier>{fd3799c7-0e93-41ae-acdf-c7e1c0dcf47c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame\픽셀충돌">
+      <UniqueIdentifier>{743a4794-252d-4f3f-9ab8-569df96c8031}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame\씬테스트">
+      <UniqueIdentifier>{5975e2e2-10e1-4381-a6cd-828c10d67523}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameFramework2D\로딩">
+      <UniqueIdentifier>{ab3da0ca-fd8b-4d25-92aa-c4ecc6b51865}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame\스노우브라더스">
+      <UniqueIdentifier>{ef607b60-94e7-4926-b5da-2816473ab589}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MainGame\로딩화면">
+      <UniqueIdentifier>{5af3b0bc-41c3-40bd-ab54-010ae1a1e312}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="commonMacroFunction.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>GameFramework2D\유틸</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>WinMain</Filter>
     </ClInclude>
     <ClInclude Include="gameNode.h">
-      <Filter>2D GAMEFRAMEWORK</Filter>
-    </ClInclude>
-    <ClInclude Include="singletonBase.h">
-      <Filter>2D GAMEFRAMEWORK\메니져</Filter>
-    </ClInclude>
-    <ClInclude Include="keyManager.h">
-      <Filter>2D GAMEFRAMEWORK\메니져</Filter>
-    </ClInclude>
-    <ClInclude Include="randomFunction.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>MainGame</Filter>
     </ClInclude>
     <ClInclude Include="mainGame.h">
-      <Filter>메인게임</Filter>
+      <Filter>MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="singletonBase.h">
+      <Filter>GameFramework2D\매니져</Filter>
+    </ClInclude>
+    <ClInclude Include="keyManager.h">
+      <Filter>GameFramework2D\매니져</Filter>
+    </ClInclude>
+    <ClInclude Include="randomFunction.h">
+      <Filter>GameFramework2D\유틸</Filter>
     </ClInclude>
     <ClInclude Include="image.h">
-      <Filter>2D GAMEFRAMEWORK\이미지</Filter>
+      <Filter>GameFramework2D\이미지</Filter>
     </ClInclude>
     <ClInclude Include="imageManager.h">
-      <Filter>2D GAMEFRAMEWORK\메니져</Filter>
+      <Filter>GameFramework2D\매니져</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>MainGame\슈팅게임</Filter>
+    </ClInclude>
+    <ClInclude Include="bullet.h">
+      <Filter>GameFramework2D\총알</Filter>
     </ClInclude>
     <ClInclude Include="util.h">
-      <Filter>2D GAMEFRAMEWORK\유틸</Filter>
+      <Filter>GameFramework2D\유틸</Filter>
     </ClInclude>
-    <ClInclude Include="bullets.h">
-      <Filter>2D GAMEFRAMEWORK\총알</Filter>
+    <ClInclude Include="enemy.h">
+      <Filter>MainGame\슈팅게임</Filter>
     </ClInclude>
-    <ClInclude Include="megamanX6.h">
-      <Filter>메인게임\메가맨</Filter>
+    <ClInclude Include="minion.h">
+      <Filter>MainGame\슈팅게임</Filter>
     </ClInclude>
-    <ClInclude Include="fortress.h">
-      <Filter>메인게임\포트리스</Filter>
+    <ClInclude Include="enemyManager.h">
+      <Filter>MainGame\슈팅게임</Filter>
     </ClInclude>
-    <ClInclude Include="tank.h">
-      <Filter>메인게임\포트리스</Filter>
+    <ClInclude Include="progressBar.h">
+      <Filter>GameFramework2D\체력바</Filter>
     </ClInclude>
-    <ClInclude Include="camera.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="txtData.h">
+      <Filter>GameFramework2D\TXT데이터</Filter>
+    </ClInclude>
+    <ClInclude Include="iniData.h">
+      <Filter>GameFramework2D\INI데이터</Filter>
+    </ClInclude>
+    <ClInclude Include="iniTestScene.h">
+      <Filter>MainGame\ini테스트</Filter>
+    </ClInclude>
+    <ClInclude Include="pixelCollision.h">
+      <Filter>MainGame\픽셀충돌</Filter>
+    </ClInclude>
+    <ClInclude Include="sceneManager.h">
+      <Filter>GameFramework2D\매니져</Filter>
+    </ClInclude>
+    <ClInclude Include="sceneTest.h">
+      <Filter>MainGame\씬테스트</Filter>
+    </ClInclude>
+    <ClInclude Include="shootingGame.h">
+      <Filter>MainGame\슈팅게임</Filter>
+    </ClInclude>
+    <ClInclude Include="timeManager.h">
+      <Filter>GameFramework2D\매니져</Filter>
+    </ClInclude>
+    <ClInclude Include="loading.h">
+      <Filter>GameFramework2D\로딩</Filter>
+    </ClInclude>
+    <ClInclude Include="loadingScene.h">
+      <Filter>MainGame\로딩화면</Filter>
+    </ClInclude>
+    <ClInclude Include="color.h">
+      <Filter>MainGame\스노우브라더스</Filter>
+    </ClInclude>
+    <ClInclude Include="effect.h">
+      <Filter>MainGame\스노우브라더스</Filter>
+    </ClInclude>
+    <ClInclude Include="item.h">
+      <Filter>MainGame\스노우브라더스</Filter>
+    </ClInclude>
+    <ClInclude Include="stagemap.h">
+      <Filter>MainGame\스노우브라더스</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>WinMain</Filter>
     </ClCompile>
-    <ClCompile Include="winMain.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>WinMain</Filter>
     </ClCompile>
     <ClCompile Include="gameNode.cpp">
-      <Filter>2D GAMEFRAMEWORK</Filter>
-    </ClCompile>
-    <ClCompile Include="keyManager.cpp">
-      <Filter>2D GAMEFRAMEWORK\메니져</Filter>
+      <Filter>MainGame</Filter>
     </ClCompile>
     <ClCompile Include="mainGame.cpp">
-      <Filter>메인게임</Filter>
+      <Filter>MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="keyManager.cpp">
+      <Filter>GameFramework2D\매니져</Filter>
     </ClCompile>
     <ClCompile Include="image.cpp">
-      <Filter>2D GAMEFRAMEWORK\이미지</Filter>
+      <Filter>GameFramework2D\이미지</Filter>
     </ClCompile>
     <ClCompile Include="imageManager.cpp">
-      <Filter>2D GAMEFRAMEWORK\메니져</Filter>
+      <Filter>GameFramework2D\매니져</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>MainGame\슈팅게임</Filter>
+    </ClCompile>
+    <ClCompile Include="bullet.cpp">
+      <Filter>GameFramework2D\총알</Filter>
     </ClCompile>
     <ClCompile Include="util.cpp">
-      <Filter>2D GAMEFRAMEWORK\유틸</Filter>
+      <Filter>GameFramework2D\유틸</Filter>
     </ClCompile>
-    <ClCompile Include="bullets.cpp">
-      <Filter>2D GAMEFRAMEWORK\총알</Filter>
+    <ClCompile Include="enemy.cpp">
+      <Filter>MainGame\슈팅게임</Filter>
     </ClCompile>
-    <ClCompile Include="megamanX6.cpp">
-      <Filter>메인게임\메가맨</Filter>
+    <ClCompile Include="minion.cpp">
+      <Filter>MainGame\슈팅게임</Filter>
     </ClCompile>
-    <ClCompile Include="fortress.cpp">
-      <Filter>메인게임\포트리스</Filter>
+    <ClCompile Include="enemyManager.cpp">
+      <Filter>MainGame\슈팅게임</Filter>
     </ClCompile>
-    <ClCompile Include="tank.cpp">
-      <Filter>메인게임\포트리스</Filter>
+    <ClCompile Include="progressBar.cpp">
+      <Filter>GameFramework2D\체력바</Filter>
+    </ClCompile>
+    <ClCompile Include="txtData.cpp">
+      <Filter>GameFramework2D\TXT데이터</Filter>
+    </ClCompile>
+    <ClCompile Include="iniData.cpp">
+      <Filter>GameFramework2D\INI데이터</Filter>
+    </ClCompile>
+    <ClCompile Include="iniTestScene.cpp">
+      <Filter>MainGame\ini테스트</Filter>
+    </ClCompile>
+    <ClCompile Include="pixelCollision.cpp">
+      <Filter>MainGame\픽셀충돌</Filter>
+    </ClCompile>
+    <ClCompile Include="sceneManager.cpp">
+      <Filter>GameFramework2D\매니져</Filter>
+    </ClCompile>
+    <ClCompile Include="sceneTest.cpp">
+      <Filter>MainGame\씬테스트</Filter>
+    </ClCompile>
+    <ClCompile Include="shootingGame.cpp">
+      <Filter>MainGame\슈팅게임</Filter>
+    </ClCompile>
+    <ClCompile Include="timeManager.cpp">
+      <Filter>GameFramework2D\매니져</Filter>
+    </ClCompile>
+    <ClCompile Include="loading.cpp">
+      <Filter>GameFramework2D\로딩</Filter>
+    </ClCompile>
+    <ClCompile Include="loadingScene.cpp">
+      <Filter>MainGame\로딩화면</Filter>
+    </ClCompile>
+    <ClCompile Include="effect.cpp">
+      <Filter>MainGame\스노우브라더스</Filter>
+    </ClCompile>
+    <ClCompile Include="item.cpp">
+      <Filter>MainGame\스노우브라더스</Filter>
+    </ClCompile>
+    <ClCompile Include="stagemap.cpp">
+      <Filter>MainGame\스노우브라더스</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

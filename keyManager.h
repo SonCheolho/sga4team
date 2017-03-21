@@ -1,33 +1,31 @@
 #pragma once
 #include "singletonBase.h"
-#include <bitset>
-
-using namespace std;
-
-//============================================================================
-//		## keyManager ## (키메니져)
-//============================================================================
+//====================================================================
+//			## keyManager ## (키 매니져)
+//====================================================================
 
 #define KEYMAX 256
 
-class keyManager : public singletonBase<keyManager>
+class keyManager : public singletonBase <keyManager>
 {
 private:
-	bitset<KEYMAX> _keyUp;
-	bitset<KEYMAX> _keyDown;
+	BOOL _keyUp[KEYMAX];
+	BOOL _keyDown[KEYMAX];
+
 public:
 	HRESULT init(void);
+	void release(void);
 
 	//키가 한번만 눌렸냐?
 	bool isOnceKeyDown(int key);
-	//키가 한번 눌렀다가 띄었냐?
+	//키가 한번 눌렀다 띄었냐?
 	bool isOnceKeyUp(int key);
-	//키가 계속 눌려있냐?
+	//키가 계속 눌려 있냐?
 	bool isStayKeyDown(int key);
-	//키가 토글키냐?
+	//토글키냐?
 	bool isToggleKey(int key);
 
-	keyManager();
-	~keyManager();
+	keyManager() {}
+	~keyManager() {}
 };
 

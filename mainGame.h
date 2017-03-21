@@ -1,20 +1,18 @@
 #pragma once
 #include "gameNode.h"
-#include "megamanX6.h"
-#include "fortress.h"
+/*앞으로 추가하려는 씬의 헤더파일만 선언한다*/
+#include "sceneTest.h"
+#include "shootingGame.h"
+#include "loadingScene.h"
 
-class mainGame :public gameNode
+class mainGame : public gameNode
 {
-private:
-	megamanX6* _megamanX6;
-	fortress* _fortress;
 public:
 	HRESULT init(void);
 	void release(void);
 	void update(void);
 	void render(void);
-
-	mainGame();
-	~mainGame();
+	
+	mainGame() {}
+	~mainGame() {}
 };
-
