@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="2D GAMEFRAMEWORK">
+      <UniqueIdentifier>{272b49be-9ad0-4509-a526-e337b1dd414c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2D GAMEFRAMEWORK\메니져">
+      <UniqueIdentifier>{c2120d7e-a23e-4683-b889-e3eeb187f89b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="메인게임">
+      <UniqueIdentifier>{942ee208-862b-4f70-9849-ef51b3faf005}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2D GAMEFRAMEWORK\이미지">
+      <UniqueIdentifier>{374b554f-1a98-4d64-abb9-e2ce08555763}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2D GAMEFRAMEWORK\유틸">
+      <UniqueIdentifier>{8bc523dd-195e-4f2a-a24c-4f6b6d018fa3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2D GAMEFRAMEWORK\총알">
+      <UniqueIdentifier>{8f5f638c-98f1-4283-bab3-2dbe6d2a5d85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="메인게임\메가맨">
+      <UniqueIdentifier>{0a0d3c4a-d112-4546-857a-9db70410e182}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="메인게임\포트리스">
+      <UniqueIdentifier>{1d1396a7-4a5e-4bee-9d08-bfd92ba1dde5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="commonMacroFunction.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="gameNode.h">
+      <Filter>2D GAMEFRAMEWORK</Filter>
+    </ClInclude>
+    <ClInclude Include="singletonBase.h">
+      <Filter>2D GAMEFRAMEWORK\메니져</Filter>
+    </ClInclude>
+    <ClInclude Include="keyManager.h">
+      <Filter>2D GAMEFRAMEWORK\메니져</Filter>
+    </ClInclude>
+    <ClInclude Include="randomFunction.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="mainGame.h">
+      <Filter>메인게임</Filter>
+    </ClInclude>
+    <ClInclude Include="image.h">
+      <Filter>2D GAMEFRAMEWORK\이미지</Filter>
+    </ClInclude>
+    <ClInclude Include="imageManager.h">
+      <Filter>2D GAMEFRAMEWORK\메니져</Filter>
+    </ClInclude>
+    <ClInclude Include="util.h">
+      <Filter>2D GAMEFRAMEWORK\유틸</Filter>
+    </ClInclude>
+    <ClInclude Include="bullets.h">
+      <Filter>2D GAMEFRAMEWORK\총알</Filter>
+    </ClInclude>
+    <ClInclude Include="megamanX6.h">
+      <Filter>메인게임\메가맨</Filter>
+    </ClInclude>
+    <ClInclude Include="fortress.h">
+      <Filter>메인게임\포트리스</Filter>
+    </ClInclude>
+    <ClInclude Include="tank.h">
+      <Filter>메인게임\포트리스</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="winMain.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="gameNode.cpp">
+      <Filter>2D GAMEFRAMEWORK</Filter>
+    </ClCompile>
+    <ClCompile Include="keyManager.cpp">
+      <Filter>2D GAMEFRAMEWORK\메니져</Filter>
+    </ClCompile>
+    <ClCompile Include="mainGame.cpp">
+      <Filter>메인게임</Filter>
+    </ClCompile>
+    <ClCompile Include="image.cpp">
+      <Filter>2D GAMEFRAMEWORK\이미지</Filter>
+    </ClCompile>
+    <ClCompile Include="imageManager.cpp">
+      <Filter>2D GAMEFRAMEWORK\메니져</Filter>
+    </ClCompile>
+    <ClCompile Include="util.cpp">
+      <Filter>2D GAMEFRAMEWORK\유틸</Filter>
+    </ClCompile>
+    <ClCompile Include="bullets.cpp">
+      <Filter>2D GAMEFRAMEWORK\총알</Filter>
+    </ClCompile>
+    <ClCompile Include="megamanX6.cpp">
+      <Filter>메인게임\메가맨</Filter>
+    </ClCompile>
+    <ClCompile Include="fortress.cpp">
+      <Filter>메인게임\포트리스</Filter>
+    </ClCompile>
+    <ClCompile Include="tank.cpp">
+      <Filter>메인게임\포트리스</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
