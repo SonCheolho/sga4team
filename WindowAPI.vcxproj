@@ -162,10 +162,12 @@
     <ClInclude Include="player.h" />
     <ClInclude Include="progressBar.h" />
     <ClInclude Include="randomFunction.h" />
+    <ClInclude Include="sb_player.h" />
     <ClInclude Include="sceneManager.h" />
     <ClInclude Include="sceneTest.h" />
     <ClInclude Include="shootingGame.h" />
     <ClInclude Include="singletonBase.h" />
+    <ClInclude Include="snowBrothers.h" />
     <ClInclude Include="stagemap.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="timeManager.h" />
@@ -192,9 +194,11 @@
     <ClCompile Include="pixelCollision.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="progressBar.cpp" />
+    <ClCompile Include="sb_player.cpp" />
     <ClCompile Include="sceneManager.cpp" />
     <ClCompile Include="sceneTest.cpp" />
     <ClCompile Include="shootingGame.cpp" />
+    <ClCompile Include="snowBrothers.cpp" />
     <ClCompile Include="stagemap.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

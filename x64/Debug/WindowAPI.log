@@ -1,114 +1,13 @@
-﻿  stdafx.cpp
-  WinMain.cpp
-  util.cpp
-  txtData.cpp
-c:\users\user\desktop\snowbros\txtdata.cpp(21): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 'strcpy' 선언을 참조하십시오.
-c:\users\user\desktop\snowbros\txtdata.cpp(37): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note: 'strcat' 선언을 참조하십시오.
-c:\users\user\desktop\snowbros\txtdata.cpp(40): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note: 'strcat' 선언을 참조하십시오.
-c:\users\user\desktop\snowbros\txtdata.cpp(70): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: 'strtok' 선언을 참조하십시오.
-c:\users\user\desktop\snowbros\txtdata.cpp(73): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: 'strtok' 선언을 참조하십시오.
-  timeManager.cpp
-c:\users\user\desktop\snowbros\timemanager.cpp(106): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\timemanager.cpp(109): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\timemanager.cpp(112): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\timemanager.cpp(105): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+﻿  sb_player.cpp
+c:\users\user\desktop\snowbros\sb_player.cpp(22): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\user\desktop\snowbros\sb_player.cpp(27): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\user\desktop\snowbros\sb_player.cpp(83): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\user\desktop\snowbros\sb_player.cpp(97): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
-c:\users\user\desktop\snowbros\timemanager.cpp(108): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
-c:\users\user\desktop\snowbros\timemanager.cpp(111): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
-  stagemap.cpp
-  shootingGame.cpp
-  sceneTest.cpp
-c:\users\user\desktop\snowbros\scenetest.cpp(25): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\scenetest.cpp(24): warning C4101: 'str' :참조되지 않은 지역 변수입니다.
-  sceneManager.cpp
-  progressBar.cpp
-c:\users\user\desktop\snowbros\progressbar.cpp(11): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\progressbar.cpp(12): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\progressbar.cpp(28): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\progressbar.cpp(29): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\progressbar.cpp(24): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
-c:\users\user\desktop\snowbros\progressbar.cpp(25): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
-c:\users\user\desktop\snowbros\progressbar.cpp(49): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  player.cpp
-c:\users\user\desktop\snowbros\player.cpp(12): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\player.cpp(22): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\player.cpp(75): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\player.cpp(83): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\player.cpp(84): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  pixelCollision.cpp
-c:\users\user\desktop\snowbros\pixelcollision.cpp(15): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\pixelcollision.cpp(18): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\pixelcollision.cpp(38): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\pixelcollision.cpp(40): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\pixelcollision.cpp(46): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\pixelcollision.cpp(52): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  minion.cpp
-  mainGame.cpp
-  loadingScene.cpp
-  loading.cpp
-c:\users\user\desktop\snowbros\loading.cpp(27): warning C4800: 'BOOL': 'true' 또는 'false'로 bool 값을 강제하고 있습니다(성능 경고).
-c:\users\user\desktop\snowbros\loading.cpp(40): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\loading.cpp(41): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\loading.cpp(44): warning C4800: 'BOOL': 'true' 또는 'false'로 bool 값을 강제하고 있습니다(성능 경고).
-c:\users\user\desktop\snowbros\loading.cpp(61): warning C4800: 'BOOL': 'true' 또는 'false'로 bool 값을 강제하고 있습니다(성능 경고).
-c:\users\user\desktop\snowbros\loading.cpp(74): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\loading.cpp(75): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\loading.cpp(80): warning C4800: 'BOOL': 'true' 또는 'false'로 bool 값을 강제하고 있습니다(성능 경고).
-c:\users\user\desktop\snowbros\loading.cpp(183): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\loading.cpp(197): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\loading.cpp(212): warning C4244: '인수': 'unsigned __int64'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\loading.cpp(212): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  keyManager.cpp
-  item.cpp
-c:\users\user\desktop\snowbros\item.cpp(185): warning C4060: switch문에 'case' 또는 'default' 레이블이 없습니다.
-c:\users\user\desktop\snowbros\item.cpp(173): warning C4102: '빨간물약': 참조되지 않은 레이블입니다.
-c:\users\user\desktop\snowbros\item.cpp(176): warning C4102: '노란물약': 참조되지 않은 레이블입니다.
-c:\users\user\desktop\snowbros\item.cpp(179): warning C4102: '초록물약': 참조되지 않은 레이블입니다.
-c:\users\user\desktop\snowbros\item.cpp(182): warning C4102: '파란물약': 참조되지 않은 레이블입니다.
-  iniTestScene.cpp
-  iniData.cpp
-c:\users\user\desktop\snowbros\inidata.cpp(33): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
-c:\users\user\desktop\snowbros\inidata.cpp(35): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(90): note: 'strcat' 선언을 참조하십시오.
-c:\users\user\desktop\snowbros\inidata.cpp(48): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
-c:\users\user\desktop\snowbros\inidata.cpp(61): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1769): note: 'sprintf' 선언을 참조하십시오.
-  imageManager.cpp
-  코드를 생성하고 있습니다...
-c:\users\user\desktop\snowbros\inidata.cpp(53): warning C4172: 지역 변수 또는 임시: data의 주소를 반환하고 있습니다.
-c:\users\user\desktop\snowbros\item.cpp(23): warning C4715: 'item::findItemList': 모든 제어 경로에서 값을 반환하지는 않습니다.
-c:\users\user\desktop\snowbros\txtdata.cpp(44): warning C4172: 지역 변수 또는 임시: str의 주소를 반환하고 있습니다.
-  컴파일하고 있습니다...
-  image.cpp
-c:\users\user\desktop\snowbros\image.cpp(101): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\image.cpp(143): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\image.cpp(189): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\image.cpp(237): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\image.cpp(325): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  gameNode.cpp
-  enemyManager.cpp
-c:\users\user\desktop\snowbros\enemymanager.cpp(77): warning C4244: '인수': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  enemy.cpp
-  effect.cpp
-  bullet.cpp
-c:\users\user\desktop\snowbros\bullet.cpp(51): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\bullet.cpp(66): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\bullet.cpp(164): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\bullet.cpp(180): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\bullet.cpp(250): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\user\desktop\snowbros\bullet.cpp(264): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  코드를 생성하고 있습니다...
-c:\users\user\desktop\snowbros\effect.cpp(30): warning C4700: 초기화되지 않은 '_stFX' 지역 변수를 사용했습니다.
+c:\users\user\desktop\snowbros\sb_player.cpp(124): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\user\desktop\snowbros\sb_player.cpp(128): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\user\desktop\snowbros\sb_player.cpp(134): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\user\desktop\snowbros\sb_player.cpp(150): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\user\desktop\snowbros\sb_player.cpp(169): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   WindowAPI.vcxproj -> C:\Users\user\Desktop\snowBros\x64\Debug\WindowAPI.exe
   WindowAPI.vcxproj -> C:\Users\user\Desktop\snowBros\x64\Debug\WindowAPI.pdb (Full PDB)

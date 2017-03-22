@@ -54,10 +54,10 @@ using namespace MY_UTIL;
 //			## 디파인문 - 메크로 ## (윈도우창 초기화)
 //====================================================================
 #define WINNAME (LPTSTR)(TEXT("피의 수요일과 함께하는 개발4팀"))
-#define WINSTARTX		-1400
+#define WINSTARTX		400
 #define WINSTARTY		50
 #define WINSIZEX		800
-#define WINSIZEY		600
+#define WINSIZEY		800
 #define WINSTYLE		WS_CAPTION | WS_SYSMENU
 
 //====================================================================
@@ -73,3 +73,5 @@ using namespace MY_UTIL;
 extern HINSTANCE _hInstance;
 extern HWND _hWnd;
 extern POINT _ptMouse;
+extern COLORREF _mazenta = RGB(255, 0, 255);
+extern COLORREF _black = RGB(0, 0, 0);

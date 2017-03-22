@@ -12,9 +12,11 @@ HRESULT mainGame::init(void)
 	SCENEMANAGER->addScene("테스트", new sceneTest);
 	SCENEMANAGER->addScene("슈팅게임", new shootingGame);
 	SCENEMANAGER->addScene("로딩화면", new loadingScene);
+	SCENEMANAGER->addScene("스노우브라더스", new snowBrothers);
 
 	/*시작 씬 설정*/
-	SCENEMANAGER->changeScene("로딩화면");
+	SCENEMANAGER->changeScene("스노우브라더스");
+
 
 	return S_OK;
 }

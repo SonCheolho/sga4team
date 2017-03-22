@@ -4,6 +4,7 @@
 #include "sceneTest.h"
 #include "shootingGame.h"
 #include "loadingScene.h"
+#include "snowBrothers.h"
 
 class mainGame : public gameNode
 {
