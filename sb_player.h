@@ -3,10 +3,10 @@
 
 class snowBrothers;
 
-#define GRAVITY 0.2f;
-#define WALK_SPEED 2.0f
+#define GRAVITY 0.1f
+#define WALK_SPEED 1.5f
 #define RUN_SPEED 8.0f
-#define JUMP_SPEED 7.0f
+#define JUMP_SPEED 4.5f
 
 enum PLAYER_STATE
 {
