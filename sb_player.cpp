@@ -123,7 +123,8 @@ void sb_player::playerMove(void)
 		if (_player.speedY <= 0) _player.isJumpDown = true;
 		break;
 	case DROP:
-		_player.y += GRAVITY * 2;
+		_player.y -= _player.speedY;
+		_player.speedY -= GRAVITY;
 		break;
 	}
 }

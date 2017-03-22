@@ -9,6 +9,8 @@ HRESULT snowBrothers::init(void)
 	_sbPlayer = new sb_player;
 	_sbPlayer->init();
 
+	_sbBoss = new sb_boss;
+	_sbBoss->init();
 	return S_OK;
 }
 
@@ -16,11 +18,16 @@ void snowBrothers::release(void)
 {
 	_sbPlayer->release();
 	SAFE_DELETE(_sbPlayer);
+	_sbBoss->release();
+	SAFE_DELETE(_sbBoss);
+
 }
 
 void snowBrothers::update(void)
 {
 	_sbPlayer->update();
+	_sbBoss->update();
+
 }
 
 void snowBrothers::render(void)
@@ -33,4 +40,6 @@ void snowBrothers::render(void)
 	}
 
 	_sbPlayer->render();
+	_sbBoss->render();
+
 }

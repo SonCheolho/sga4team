@@ -1,6 +1,7 @@
 #pragma once
 #include "gameNode.h"
 #include "sb_player.h"
+#include "sb_boss.h"
 
 class snowBrothers : public gameNode
 {
@@ -9,7 +10,7 @@ private:
 	image* _collisionImage;
 
 	sb_player* _sbPlayer;
-
+	sb_boss* _sbBoss;
 public:
 	HRESULT init(void);
 	void release(void);
