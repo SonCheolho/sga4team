@@ -148,6 +148,7 @@ void sb_player::playerMove(void)
 			_player.y -= _player.speedY;
 			_player.speedY -= GRAVITY;
 		}
+		break;
 	}
 }
 
@@ -203,9 +204,9 @@ void sb_player::pixelCollision(void)
 			{
 				if (!_player.isRight)
 				{
-					_player.speedX = 0.0f;
-					_player.x = i + _player.width / 2 + 1;
+					//_player.x = i + _player.width / 2 + 1;
 				}
+				break;
 			}
 		}
 		// 우측 충돌
@@ -219,8 +220,7 @@ void sb_player::pixelCollision(void)
 			{
 				if (_player.isRight)
 				{
-					_player.speedX = 0.0f;
-					_player.x = i - _player.width / 2 - 1;
+					//_player.x = i - _player.width / 2 - 1;
 				}
 				break;
 			}
@@ -243,7 +243,7 @@ void sb_player::pixelCollision(void)
 		// 좌측 충돌
 		for (int i = _player.rc.left - 1; i < _player.rc.left + 1; i++)
 		{
-			COLORREF rgbMiddle = GetPixel(IMAGEMANAGER->findImage("충돌용배경")->getMemDC(), i, _player.rc.bottom - 5);
+			COLORREF rgbMiddle = GetPixel(IMAGEMANAGER->findImage("충돌용배경")->getMemDC(), i, _player.y);
 			int r = GetRValue(rgbMiddle);
 			int g = GetGValue(rgbMiddle);
 			int b = GetBValue(rgbMiddle);
@@ -251,8 +251,7 @@ void sb_player::pixelCollision(void)
 			{
 				if (!_player.isRight)
 				{
-					_player.speedX = 0.0f;
-					_player.x = i + _player.width / 2 + 5;
+					_player.x += _player.speedX;
 				}
 				break;
 			}
@@ -260,7 +259,7 @@ void sb_player::pixelCollision(void)
 		// 우측 충돌
 		for (int i = _player.rc.right - 1; i < _player.rc.right + 1; i++)
 		{
-			COLORREF rgbMiddle = GetPixel(IMAGEMANAGER->findImage("충돌용배경")->getMemDC(), i, _player.rc.bottom - 5);
+			COLORREF rgbMiddle = GetPixel(IMAGEMANAGER->findImage("충돌용배경")->getMemDC(), i, _player.y);
 			int r = GetRValue(rgbMiddle);
 			int g = GetGValue(rgbMiddle);
 			int b = GetBValue(rgbMiddle);
@@ -268,8 +267,7 @@ void sb_player::pixelCollision(void)
 			{
 				if (_player.isRight)
 				{
-					_player.speedX = 0.0f;
-					_player.x = i - _player.width / 2 - 5;
+					_player.x -= _player.speedX;
 				}
 				break;
 			}
@@ -317,6 +315,38 @@ void sb_player::pixelCollision(void)
 		}
 		break;
 	case DROP:
+		// 좌측 충돌
+		for (int i = _player.rc.left - 1; i < _player.rc.left + 1; i++)
+		{
+			COLORREF rgbMiddle = GetPixel(IMAGEMANAGER->findImage("충돌용배경")->getMemDC(), i, _player.rc.bottom - 5);
+			int r = GetRValue(rgbMiddle);
+			int g = GetGValue(rgbMiddle);
+			int b = GetBValue(rgbMiddle);
+			if (!(r == 255 && g == 0 && b == 255))
+			{
+				if (!_player.isRight)
+				{
+					_player.x += _player.speedX;
+				}
+				break;
+			}
+		}
+		// 우측 충돌
+		for (int i = _player.rc.right - 1; i < _player.rc.right + 1; i++)
+		{
+			COLORREF rgbMiddle = GetPixel(IMAGEMANAGER->findImage("충돌용배경")->getMemDC(), i, _player.rc.bottom - 5);
+			int r = GetRValue(rgbMiddle);
+			int g = GetGValue(rgbMiddle);
+			int b = GetBValue(rgbMiddle);
+			if (!(r == 255 && g == 0 && b == 255))
+			{
+				if (_player.isRight)
+				{
+					_player.x -= _player.speedX;
+				}
+				break;
+			}
+		}
 		// 하단 충돌
 		for (int i = _player.rc.bottom - 1; i < _player.rc.bottom + 1; i++)
 		{
@@ -337,11 +367,77 @@ void sb_player::pixelCollision(void)
 		}
 		break;
 	case ATTACK:
+		
+		// 좌측 충돌
+		for (int i = _player.rc.left - 1; i < _player.rc.left + 1; i++)
+		{
+			COLORREF rgbMiddle = GetPixel(IMAGEMANAGER->findImage("충돌용배경")->getMemDC(), i, _player.y);
+			int r = GetRValue(rgbMiddle);
+			int g = GetGValue(rgbMiddle);
+			int b = GetBValue(rgbMiddle);
+			if (!(r == 255 && g == 0 && b == 255))
+			{
+				if (!_player.isRight && _player.oState != JUMP)
+				{
+					_player.x += _player.speedX;
+				}
+				break;
+			}
+		}
+		// 우측 충돌
+		for (int i = _player.rc.right - 1; i < _player.rc.right + 1; i++)
+		{
+			COLORREF rgbMiddle = GetPixel(IMAGEMANAGER->findImage("충돌용배경")->getMemDC(), i, _player.rc.bottom - 5);
+			int r = GetRValue(rgbMiddle);
+			int g = GetGValue(rgbMiddle);
+			int b = GetBValue(rgbMiddle);
+			if (!(r == 255 && g == 0 && b == 255))
+			{
+				if (_player.isRight && _player.oState != JUMP)
+				{
+					_player.x -= _player.speedX;
+				}
+				break;
+			}
+		}
+		// 하단 충돌
 		for (int i = _player.rc.bottom - 1; i < _player.rc.bottom + 1; i++)
 		{
-			//
+			if (_player.isJumpDown == true)
+			{
+				COLORREF rgbMiddle = GetPixel(IMAGEMANAGER->findImage("충돌용배경")->getMemDC(), _player.x, i);
+				COLORREF rgbTemp = GetPixel(IMAGEMANAGER->findImage("충돌용배경")->getMemDC(), _player.x, i - 5);
+				int r = GetRValue(rgbMiddle);
+				int g = GetGValue(rgbMiddle);
+				int b = GetBValue(rgbMiddle);
+				int r1 = GetRValue(rgbTemp);
+				int g1 = GetGValue(rgbTemp);
+				int b1 = GetBValue(rgbTemp);
+				if (r == 0 && g == 0 && b == 0 && r1 == 255 && g1 == 0 && b1 == 255)
+				{
+					_player.speedX = 0.0f;
+					_player.speedY = 0.0f;
+					_player.state = IDLE;
+					//_player.count = 0;
+					//_player.index = 0;
+					//_player.y = i - _player.height / 2 + 1;//_player.y -= 5;
+					_player.isJumpDown = false;
+					_player.y = i - _player.height / 2 + 1;
+					/*
+					_player.speedX = 0.0f;
+					_player.speedY = 0.0f;
+					_player.state = IDLE;
+					_player.count = 0;
+					_player.index = 0;
+					_player.isJumpDown = false;
+					_player.y = i - _player.height / 2 + 1;
+					break;
+					*/
+					break;
+				}
+			}
 		}
-
+		
 		break;
 	}
 }

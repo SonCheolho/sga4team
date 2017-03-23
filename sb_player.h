@@ -7,7 +7,7 @@ class snowBrothers;
 #define WALK_SPEED 1.5f
 #define RUN_SPEED 6.0f
 #define JUMP_SPEED 4.5f
-#define DROP_SPEED 3.0f
+#define DROP_SPEED 2.5f
 
 enum PLAYER_STATE
 {
@@ -31,6 +31,7 @@ struct tagPlayer
 	int count;
 	bool isRight;
 	bool isJumpDown;
+	bool isAttack;
 	RECT rc;
 	image* img[6];
 	int probeX, probeY;
