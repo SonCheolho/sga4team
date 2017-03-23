@@ -5,6 +5,8 @@
 void effect::createFX(int getEnumFX, int centerX, int centerY, int liveTime)
 {
 	tagFX _stFX;
+	ZeroMemory(&_stFX, sizeof(_stFX));
+
 	switch (getEnumFX)
 	{
 	//case ´«µ¢ÀÌ:
