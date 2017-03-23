@@ -5,8 +5,9 @@ class snowBrothers;
 
 #define GRAVITY 0.1f
 #define WALK_SPEED 1.5f
-#define RUN_SPEED 8.0f
+#define RUN_SPEED 6.0f
 #define JUMP_SPEED 4.5f
+#define DROP_SPEED 3.0f
 
 enum PLAYER_STATE
 {
@@ -24,7 +25,9 @@ struct tagPlayer
 	float speedX, speedY;
 	int width, height;
 	PLAYER_STATE state;
+	PLAYER_STATE oState;
 	int index;
+	int oIndex;
 	int count;
 	bool isRight;
 	bool isJumpDown;
