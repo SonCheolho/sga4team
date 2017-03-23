@@ -19,7 +19,7 @@ enum MOTION
 	대기,
 	아래점프,
 	점프,
-	이동,
+	걷기,
 	죽음,
 	공격1,
 	공격2
@@ -58,6 +58,9 @@ public:
 
 	//에너미 무빙
 	void enemyMoving();
+
+	//픽셀 충돌
+	void pixelCollision();
 
 
 	HRESULT init(void);
