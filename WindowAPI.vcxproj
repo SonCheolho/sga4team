@@ -163,7 +163,6 @@
     <ClInclude Include="progressBar.h" />
     <ClInclude Include="randomFunction.h" />
     <ClInclude Include="sb_boss.h" />
-    <ClInclude Include="sb_enemy.h" />
     <ClInclude Include="sb_player.h" />
     <ClInclude Include="sceneManager.h" />
     <ClInclude Include="sceneTest.h" />
@@ -197,7 +196,6 @@
     <ClCompile Include="player.cpp" />
     <ClCompile Include="progressBar.cpp" />
     <ClCompile Include="sb_boss.cpp" />
-    <ClCompile Include="sb_enemy.cpp" />
     <ClCompile Include="sb_player.cpp" />
     <ClCompile Include="sceneManager.cpp" />
     <ClCompile Include="sceneTest.cpp" />
