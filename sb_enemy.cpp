@@ -61,21 +61,38 @@ void sb_enemy::pixelCollision()
 {
 	for (int i = 0; i < _vEnemy.size(); ++i)
 	{
-		if (_vEnemy[i].paturn == 1 && !(_vEnemy[i].motion == 리스폰 && _vEnemy[i].motion == 아래점프 && _vEnemy[i].motion == 점프))
+		if (_vEnemy[i].paturn == 1 && !(_vEnemy[i].motion == 리스폰))
 		{
-			for (int i = _vEnemy[i].rc.bottom - _vEnemy[i].height / 2; i < _vEnemy[i].rc.bottom; i++)
+			//좌우벽충돌
+			for (int  i = 0; i < _vEnemy[i].centerX; i++)
 			{
-				COLORREF color = GetPixel(IMAGEMANAGER->findImage("충돌용이미지")->getMemDC(), _vEnemy[i].centerX, i);
-				int r = GetRValue(color);
-				int g = GetGValue(color);
-				int b = GetBValue(color);
-				if (!(r == 255 && g == 0 && b == 255))
+
+			}
+			//바닥 충돌
+			if (!(_vEnemy[i].motion == 아래점프 && _vEnemy[i].motion == 점프))
+			{
+				for (int i = _vEnemy[i].rc.bottom - _vEnemy[i].height / 2; i < _vEnemy[i].rc.bottom; i++)
 				{
-					_vEnemy[i].centerY = i - _vEnemy[i].centerY;
-					break;
+					COLORREF color = GetPixel(IMAGEMANAGER->findImage("충돌용배경")->getMemDC(), _vEnemy[i].centerX, i);
+					int r = GetRValue(color);
+					int g = GetGValue(color);
+					int b = GetBValue(color);
+
+					//대각선 바닥 충돌
+					if (r == 255 && g == 0 && b == 255)
+					{
+						_vEnemy[i].centerY = i - _vEnemy[i].height / 2;
+						break;
+					}
+
+					//일반 바닥 충돌 (낙하 처리) 
+					if (r == 255 && g == 0 && b == 255)
+					{
+						_vEnemy[i].centerY = i - _vEnemy[i].height / 2;
+						break;
+					}
 				}
 			}
-
 		}
 	}
 }
