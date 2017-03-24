@@ -161,6 +161,9 @@
     <ClInclude Include="sb_boss.h">
       <Filter>MainGame\스노우브라더스</Filter>
     </ClInclude>
+    <ClInclude Include="sb_bullet.h">
+      <Filter>MainGame\스노우브라더스</Filter>
+    </ClInclude>
     <ClInclude Include="sb_enemy.h">
       <Filter>MainGame\스노우브라더스</Filter>
     </ClInclude>
@@ -259,11 +262,17 @@
     <ClCompile Include="sb_boss.cpp">
       <Filter>MainGame\스노우브라더스</Filter>
     </ClCompile>
+    <ClCompile Include="sb_bullet.cpp">
+      <Filter>MainGame\스노우브라더스</Filter>
+    </ClCompile>
     <ClCompile Include="sb_enemy.cpp">
       <Filter>MainGame\스노우브라더스</Filter>
     </ClCompile>
     <ClCompile Include="sb_bullet.cpp">
       <Filter>MainGame\스노우브라더스</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>
