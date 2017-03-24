@@ -57,7 +57,6 @@ void loadingScene::loadingImage(void)
 	_loading->loadImage("stage2-2", "image/2_2.bmp", 672, 720);
 	_loading->loadImage("stage2-3", "image/2_3.bmp", 672, 720);
 	_loading->loadImage("stage3-2", "image/3_2.bmp", 672, 720);
-	_loading->loadImage("stage3-3", "image/3_3.bmp", 672, 720);
 
 }
 
