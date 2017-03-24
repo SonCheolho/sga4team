@@ -1,5 +1,6 @@
 #pragma once
 #include "gameNode.h"
+#include "sb_bullet.h"
 
 class snowBrothers;
 
@@ -43,6 +44,7 @@ private:
 	tagPlayer _player;
 	int _count;
 	snowBrothers* _snowBrothers;
+	sb_bullet* _sbBullet;
 
 public:
 	HRESULT init(void);
