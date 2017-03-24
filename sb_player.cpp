@@ -148,6 +148,7 @@ void sb_player::playerMove(void)
 			_player.y -= _player.speedY;
 			_player.speedY -= GRAVITY;
 		}
+		if (_player.speedY <= 0) _player.isJumpDown = true;
 		break;
 	}
 }
@@ -422,7 +423,7 @@ void sb_player::pixelCollision(void)
 					//_player.index = 0;
 					//_player.y = i - _player.height / 2 + 1;//_player.y -= 5;
 					_player.isJumpDown = false;
-					_player.y = i - _player.height / 2 + 1;
+					//_player.y = i - _player.height / 2 + 1;
 					/*
 					_player.speedX = 0.0f;
 					_player.speedY = 0.0f;
@@ -433,6 +434,13 @@ void sb_player::pixelCollision(void)
 					_player.y = i - _player.height / 2 + 1;
 					break;
 					*/
+					_player.speedX = 0.0f;
+					_player.speedY = 0.0f;
+					_player.state = IDLE;
+					_player.count = 0;
+					_player.index = 0;
+					_player.isJumpDown = false;
+					_player.y = i - _player.height / 2 + 1;
 					break;
 				}
 			}
