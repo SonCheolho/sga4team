@@ -13,7 +13,7 @@ enum bulletType
 	FULL_UP
 };
 
-struct tagBullet
+struct tagPlayerBullet
 {
 	image* bulletImg[2];
 	float x, y;
