@@ -239,6 +239,10 @@ void sb_enemy::render(void)
 		{
 
 		}
+
+
+
+		//
 	}
 
 
