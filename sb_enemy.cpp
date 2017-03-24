@@ -23,7 +23,7 @@ void sb_enemy::enemySet(ENEMY_NUMBER EenemyNum, LOOK currentLook, int centerX, i
 void sb_enemy::enemyMoving()
 {
 	for (int i = 0; i < _vEnemy.size(); ++i)
-	{
+	{//
 		//리스폰 (공통)
 		if (_vEnemy[i].paturn == 0 && _vEnemy[i].rc.top + _vEnemy[i].height / 2 < _vEnemy[i].centerY)
 		{
